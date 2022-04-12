@@ -1,0 +1,7 @@
+B13PortBasic/.vsconfig
+*.csproj
+B13PortBasic/B13PortBasic.sln
+B13PortBasic/.vs/
+B13PortBasic/Library/
+B13PortBasic/obj/
+B13PortBasic/Logs/
