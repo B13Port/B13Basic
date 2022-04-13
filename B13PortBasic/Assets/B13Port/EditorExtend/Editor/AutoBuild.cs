@@ -15,9 +15,9 @@ namespace B13Port.EditorExtend
 {
     public class AutoBuild : EditorWindow
     {
-
-        static string keystorePass = "123456";
-        static string keyaliasPass = "123456";
+        private static readonly string scenePath = "Scenes";
+        private static string keystorePass = "123456";
+        private static string keyaliasPass = "123456";
 
         [MenuItem("B13Port/BuildAPK", false, 1)]
         public static void BuildAPK()
@@ -29,8 +29,15 @@ namespace B13Port.EditorExtend
 
             AssetDatabase.Refresh();
             EditorUserBuildSettings.exportAsGoogleAndroidProject = false;
+
+            string secnepath = Path.Combine(Application.dataPath, scenePath);
+            // 遍历获取目录下所有 .unity 文件
+            string[] files = Directory.GetFiles(secnepath, "*.unity", SearchOption.AllDirectories);
+
+
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
             {
+                scenes = files,
                 locationPathName = BundleName("apk", ref path),
                 targetGroup = BuildTargetGroup.Android,
                 target = BuildTarget.Android,
@@ -62,8 +69,14 @@ namespace B13Port.EditorExtend
             AssetDatabase.Refresh();
             EditorUserBuildSettings.exportAsGoogleAndroidProject = false;
             EditorUserBuildSettings.buildAppBundle = true;
+
+
+            string secnepath = Path.Combine(Application.dataPath, scenePath);
+            // 遍历获取目录下所有 .unity 文件
+            string[] files = Directory.GetFiles(secnepath, "*.unity", SearchOption.AllDirectories);
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
             {
+                scenes = files,
                 locationPathName = BundleName("aab", ref path),
                 targetGroup = BuildTargetGroup.Android,
                 target = BuildTarget.Android,
