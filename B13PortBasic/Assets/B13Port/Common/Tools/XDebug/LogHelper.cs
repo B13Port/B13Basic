@@ -5,6 +5,7 @@
     public const uint Test = 0x000008;
     public const uint ICMgr = 0x000016;
     public const uint ADMgr = 0x000032;
+    public const uint Editor = 0x0000642;
     public const uint NOLOG = 0;
     public const uint ALLLOG = uint.MaxValue;
 
@@ -14,6 +15,7 @@
         XDebug.AddKeyInfo(ICMgr, "ICMgr");
         XDebug.AddKeyInfo(ADMgr, "ADMgr");
         XDebug.AddKeyInfo(NetInfo, "NetInfo");
+        XDebug.AddKeyInfo(Editor, "Editor");
         XDebug.AddKeyInfo(Test, "测试");
         XDebug.SetLogActive(isOpen ? ALLLOG : NOLOG);
     }

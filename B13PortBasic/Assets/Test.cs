@@ -9,15 +9,20 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Test : MonoBehaviour
 {
+    private static readonly string scenePath = "Scenes";
     [Button]
     public void AAAA()
     {
-        string path = Application.dataPath;
-        string newPath = path.Replace("Assets", "APKs");
-
+        int scenescount = SceneManager.sceneCount;
+        for (int i = 0; i < scenescount; i++)
+        {
+            Debug.LogError(SceneManager.GetSceneAt(i).name);
+        }
     }
 }
