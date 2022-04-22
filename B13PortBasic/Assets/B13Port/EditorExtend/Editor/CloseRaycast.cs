@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class CloseRaycast : MonoBehaviour
 {
 #if UNITY_EDITOR
-    [MenuItem("GameObject/UI/Text")]
+    [MenuItem("GameObject/UI/B_Text")]
     static void CreatText()
     {
         GameObject go = new GameObject("Text", typeof(Text));
@@ -52,7 +52,7 @@ public class CloseRaycast : MonoBehaviour
         go = null;
     }
 
-    [MenuItem("GameObject/UI/Image")]
+    [MenuItem("GameObject/UI/B_Image")]
     static void CreatImage()
     {
         GameObject go = new GameObject("Image", typeof(Image));
@@ -93,7 +93,7 @@ public class CloseRaycast : MonoBehaviour
         go = null;
     }
 
-    [MenuItem("GameObject/UI/Button")]
+    [MenuItem("GameObject/UI/B_Button")]
     public static void CreatButton()
     {
         GameObject go = new GameObject("Button", typeof(Image));

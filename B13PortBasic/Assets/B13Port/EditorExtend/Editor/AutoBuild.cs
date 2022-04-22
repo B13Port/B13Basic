@@ -95,7 +95,7 @@ namespace B13Port.EditorExtend
             string[] retScenes = new string[scenescount];
             for (int i = 0; i < scenescount; i++)
             {
-                retScenes[i] = SceneManager.GetSceneAt(i).name;
+                retScenes[i] = SceneManager.GetSceneAt(i).path;
             }
             return retScenes;
         }
