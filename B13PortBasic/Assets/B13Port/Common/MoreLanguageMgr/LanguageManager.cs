@@ -14,7 +14,7 @@ namespace B13Port.Common
     public delegate void ChangeFont(UnityEngine.Font font);
     public class LanguageManager : MonoSingletion<LanguageManager>
     {
-
+        RedayConfig redayConfig;
         //定义一个委托事件，用于改变语言时，可以改变当前所显示的文本
         public event ChangeLanguage ChangeLangeuageEvent;
         public event ChangeFont ChangeFont;
@@ -22,6 +22,11 @@ namespace B13Port.Common
         {
             base.Init();
             DontDestroyOnLoad(this);
+            if (redayConfig == null)
+            {
+                redayConfig = FindObjectOfType<RedayConfig>();
+                RedayConfig.Instance.Init();
+            }
         }
         public void SentEvent()
         {
