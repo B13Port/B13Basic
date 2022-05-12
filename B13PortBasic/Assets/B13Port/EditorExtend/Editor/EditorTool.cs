@@ -111,10 +111,7 @@ namespace B13Port.EditorExtend
         [MenuItem("B13Port/Remove Missing-MonoBehavior Component")]
         static public void RemoveMissComponent()
         {
-            string fullPath = Application.dataPath + "/Resources/Prefabs/UI/UIWindow";
-            fullPath = fullPath.Replace("/", @"\");
-            //List<string> pathList = GetAssetsPathByFullPath(fullPath, "*.prefab", SearchOption.AllDirectories);
-            List<string> pathList = GetAssetsPathByRelativePath(new string[] { "Assets/Resources/Prefabs/UI/UIWindow" }, "t:Prefab", SearchOption.AllDirectories);
+            List<string> pathList = GetAssetsPathByRelativePath(new string[] { "Assets/Resources/Prefabs" }, "t:Prefab", SearchOption.AllDirectories);
             int counter = 0;
             for (int i = 0, iMax = pathList.Count; i < iMax; i++)
             {

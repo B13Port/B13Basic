@@ -91,12 +91,12 @@ namespace B13Port.EditorExtend
         }
         public static string[] GetBuildScenes()
         {
-            int scenescount = SceneManager.sceneCount;
-            string[] retScenes = new string[scenescount];
-            for (int i = 0; i < scenescount; i++)
+            //TODO:不同项目配置
+            string[] retScenes = new string[2]
             {
-                retScenes[i] = SceneManager.GetSceneAt(i).path;
-            }
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity"
+            };
             return retScenes;
         }
 

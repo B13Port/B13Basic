@@ -16,9 +16,10 @@ public class UserData : Singletion<UserData>
         playerData = new PlayerData(DefineVales.PlayerDataKey);
     }
 
+
     public void InitUserData()
     {
     }
 
-   
+
 }
